@@ -4,6 +4,7 @@ import path from 'path';
 import { ContactForm } from '@/lib/types';
 
 const dataFilePath = path.join(process.cwd(), 'src', 'data', 'contacts.json');
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export async function POST(request: NextRequest) {
   try {
@@ -12,6 +13,13 @@ export async function POST(request: NextRequest) {
     if (!formData.name || !formData.email || !formData.message) {
       return NextResponse.json(
         { error: 'Name, email, and message are required' },
+        { status: 400 }
+      );
+    }
+
+    if (!EMAIL_REGEX.test(formData.email)) {
+      return NextResponse.json(
+        { error: 'Please provide a valid email address' },
         { status: 400 }
       );
     }
@@ -37,7 +45,8 @@ export async function POST(request: NextRequest) {
       success: true, 
       message: 'Thank you for your inquiry! We will contact you within 24 hours.' 
     });
-  } catch {
+  } catch (error) {
+    console.error('Contact form error:', error);
     return NextResponse.json({ error: 'Failed to submit contact form' }, { status: 500 });
   }
 }
