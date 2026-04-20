@@ -1,22 +1,9 @@
 import type { Metadata } from 'next';
-import { Oswald, Inter } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import WhatsAppButton from '@/components/layout/WhatsAppButton';
 import BackToTop from '@/components/layout/BackToTop';
-
-const oswald = Oswald({
-  subsets: ['latin'],
-  variable: '--font-oswald',
-  display: 'swap',
-});
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-});
 
 export const metadata: Metadata = {
   title: {
@@ -76,7 +63,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${oswald.variable} ${inter.variable}`}>
+    <html lang="en">
       <body className="bg-snow text-charcoal-dark font-body antialiased">
         <Header />
         <main>{children}</main>
