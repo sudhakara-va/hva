@@ -1,0 +1,22 @@
+[
+  {"id": "gal-001", "title": "Kedarkantha Summit Sunrise", "category": "Trek", "expedition": "kedarkantha-trek", "url": "https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=800&q=80", "featured": true},
+  {"id": "gal-002", "title": "Valley of Flowers in Bloom", "category": "Trek", "expedition": "valley-of-flowers", "url": "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=800&q=80", "featured": true},
+  {"id": "gal-003", "title": "Roopkund Glacier View", "category": "Expedition", "expedition": "roopkund-trek", "url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80", "featured": true},
+  {"id": "gal-004", "title": "Har Ki Dun Valley", "category": "Trek", "expedition": "har-ki-dun", "url": "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80", "featured": true},
+  {"id": "gal-005", "title": "Pangarchulla Summit", "category": "Expedition", "expedition": "pangarchulla-peak", "url": "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=800&q=80", "featured": true},
+  {"id": "gal-006", "title": "Himalayan Camp at Sunset", "category": "Camp", "expedition": "general", "url": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80", "featured": true},
+  {"id": "gal-007", "title": "Snow-Covered Pine Forest", "category": "Trek", "expedition": "kedarkantha-trek", "url": "https://images.unsplash.com/photo-1540202404-1b927e27fa8b?w=800&q=80", "featured": false},
+  {"id": "gal-008", "title": "Frozen Mountain Lake", "category": "Trek", "expedition": "brahmatal-trek", "url": "https://images.unsplash.com/photo-1559521783-1d1599583485?w=800&q=80", "featured": false},
+  {"id": "gal-009", "title": "Trekkers on Ridge", "category": "Trek", "expedition": "general", "url": "https://images.unsplash.com/photo-1531761535209-180857e963b9?w=800&q=80", "featured": false},
+  {"id": "gal-010", "title": "Alpine Meadow Dawn", "category": "Camp", "expedition": "general", "url": "https://images.unsplash.com/photo-1494500764479-0c8f2919a3d8?w=800&q=80", "featured": false},
+  {"id": "gal-011", "title": "Mountain River Crossing", "category": "Trek", "expedition": "har-ki-dun", "url": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&q=80", "featured": false},
+  {"id": "gal-012", "title": "Himalayan Wildlife - Snow Leopard Territory", "category": "Wildlife", "expedition": "general", "url": "https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=800&q=80", "featured": false},
+  {"id": "gal-013", "title": "Traditional Garhwali Village", "category": "Culture", "expedition": "har-ki-dun", "url": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80", "featured": false},
+  {"id": "gal-014", "title": "Wildflowers in Alpine Meadow", "category": "Trek", "expedition": "valley-of-flowers", "url": "https://images.unsplash.com/photo-1490750967868-88df5691cc4d?w=800&q=80", "featured": false},
+  {"id": "gal-015", "title": "Mountaineering Training", "category": "Expedition", "expedition": "pangarchulla-peak", "url": "https://images.unsplash.com/photo-1522163182402-834f871fd851?w=800&q=80", "featured": false},
+  {"id": "gal-016", "title": "Campfire at High Altitude", "category": "Camp", "expedition": "general", "url": "https://images.unsplash.com/photo-1517824806704-9040b037703b?w=800&q=80", "featured": false},
+  {"id": "gal-017", "title": "Uttarakashi Town View", "category": "Culture", "expedition": "general", "url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&q=80", "featured": false},
+  {"id": "gal-018", "title": "High Pass Crossing", "category": "Expedition", "expedition": "roopkund-trek", "url": "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80", "featured": false},
+  {"id": "gal-019", "title": "Himalayan Bird - Monal Pheasant", "category": "Wildlife", "expedition": "general", "url": "https://images.unsplash.com/photo-1444464666168-49d633b86797?w=800&q=80", "featured": false},
+  {"id": "gal-020", "title": "Summit View at Golden Hour", "category": "Trek", "expedition": "kedarkantha-trek", "url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80", "featured": false}
+]

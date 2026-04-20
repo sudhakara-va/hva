@@ -1,0 +1,90 @@
+[
+  {
+    "id": "tst-001",
+    "name": "Arjun Sharma",
+    "location": "New Delhi",
+    "trek": "Kedarkantha Trek",
+    "date": "January 2024",
+    "rating": 5,
+    "review": "The Kedarkantha Trek with HVA was an absolutely phenomenal experience. Our guide Ramesh knew every corner of the mountain and ensured our safety throughout. The snow-covered meadows and the 360-degree summit view left me speechless - I will cherish this memory forever!",
+    "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&q=80",
+    "featured": true
+  },
+  {
+    "id": "tst-002",
+    "name": "Priya Mehta",
+    "location": "Mumbai",
+    "trek": "Valley of Flowers Trek",
+    "date": "August 2023",
+    "rating": 5,
+    "review": "Words cannot describe the beauty of Valley of Flowers. HVA's team was incredibly professional, knowledgeable about the flora, and made the entire experience magical. The accommodation and food arrangements were excellent. Will definitely book another trek with them!",
+    "photo": "https://images.unsplash.com/photo-1494790108755-2616b612b5bc?w=150&q=80",
+    "featured": true
+  },
+  {
+    "id": "tst-003",
+    "name": "Vikram Nair",
+    "location": "Bangalore",
+    "trek": "Roopkund Trek",
+    "date": "October 2023",
+    "rating": 5,
+    "review": "Roopkund was the most challenging and rewarding adventure of my life. HVA's preparation, briefings, and safety protocols were top-notch. Our guide's knowledge about the history of the skeleton lake added so much depth to the experience. Highly recommend for adventure seekers!",
+    "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&q=80",
+    "featured": true
+  },
+  {
+    "id": "tst-004",
+    "name": "Ananya Gupta",
+    "location": "Pune",
+    "trek": "Har Ki Dun Trek",
+    "date": "May 2024",
+    "rating": 5,
+    "review": "Har Ki Dun was a dream come true. The Valley of Gods lived up to its name - absolutely breathtaking at every turn. The HVA team's warmth and local knowledge made this journey extra special. The Duryodhana Temple in Osla village was an unexpected cultural highlight!",
+    "photo": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&q=80",
+    "featured": true
+  },
+  {
+    "id": "tst-005",
+    "name": "Rahul Kapoor",
+    "location": "Hyderabad",
+    "trek": "Brahmatal Trek",
+    "date": "February 2024",
+    "rating": 4,
+    "review": "The Brahmatal winter trek was spectacular. Walking through knee-deep snow to reach the frozen lake was a surreal experience. HVA provided excellent winter-grade equipment which was crucial for our safety. The views of Trishul from Brahmatal Pass were absolutely stunning.",
+    "photo": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&q=80",
+    "featured": false
+  },
+  {
+    "id": "tst-006",
+    "name": "Sneha Pillai",
+    "location": "Chennai",
+    "trek": "Pangarchulla Peak Expedition",
+    "date": "May 2023",
+    "rating": 5,
+    "review": "Successfully summiting Pangarchulla was the proudest moment of my life. HVA's mountaineering guide was exceptional - patient, skilled, and motivating. The pre-expedition training they provided was thorough and built my confidence for the technical sections. Worth every rupee!",
+    "photo": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&q=80",
+    "featured": false
+  },
+  {
+    "id": "tst-007",
+    "name": "Deepak Verma",
+    "location": "Jaipur",
+    "trek": "Kedarkantha Trek",
+    "date": "December 2023",
+    "rating": 4,
+    "review": "First time trekking in snow and HVA made it incredibly comfortable and enjoyable. The guides were patient with our inexperienced group and the food prepared at camp was surprisingly delicious. The Kedarkantha summit sunrise was the most beautiful thing I have ever witnessed.",
+    "photo": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=150&q=80",
+    "featured": false
+  },
+  {
+    "id": "tst-008",
+    "name": "Kavitha Reddy",
+    "location": "Kolkata",
+    "trek": "Valley of Flowers Trek",
+    "date": "July 2023",
+    "rating": 5,
+    "review": "As a botanist, the Valley of Flowers was my dream destination and HVA made it absolutely perfect. Our guide had extensive knowledge about the plant species and helped me identify over 50 different wildflowers. The organization was flawless and I am already planning my next trek with them!",
+    "photo": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=150&q=80",
+    "featured": false
+  }
+]
