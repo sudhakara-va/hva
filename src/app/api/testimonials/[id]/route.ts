@@ -12,11 +12,12 @@ async function readTestimonials(): Promise<Testimonial[]> {
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const testimonials = await readTestimonials();
-    const index = testimonials.findIndex(t => t.id === params.id);
+    const index = testimonials.findIndex(t => t.id === id);
     if (index === -1) {
       return NextResponse.json({ error: 'Testimonial not found' }, { status: 404 });
     }
@@ -31,11 +32,12 @@ export async function PUT(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const testimonials = await readTestimonials();
-    const filtered = testimonials.filter(t => t.id !== params.id);
+    const filtered = testimonials.filter(t => t.id !== id);
     if (filtered.length === testimonials.length) {
       return NextResponse.json({ error: 'Testimonial not found' }, { status: 404 });
     }

@@ -1,3 +1,4 @@
+'use client';
 import Link from 'next/link';
 import { Mountain, MapPin, Phone, Mail, Clock } from 'lucide-react';
 

@@ -48,3 +48,13 @@ body {
     background: linear-gradient(135deg, #1a3c2a 0%, #2d5a3f 100%);
   }
 }
+
+@layer components {
+  .input-field {
+    @apply w-full px-3 py-2 rounded-xl border border-gray-200 text-charcoal-dark bg-white text-sm transition-all;
+    font-family: var(--font-inter), sans-serif;
+  }
+  .input-field:focus {
+    @apply outline-none border-forest ring-2 ring-forest/20;
+  }
+}

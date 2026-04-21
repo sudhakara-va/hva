@@ -12,11 +12,12 @@ async function readGallery(): Promise<GalleryPhoto[]> {
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const photos = await readGallery();
-    const index = photos.findIndex(p => p.id === params.id);
+    const index = photos.findIndex(p => p.id === id);
     if (index === -1) {
       return NextResponse.json({ error: 'Photo not found' }, { status: 404 });
     }
@@ -31,11 +32,12 @@ export async function PUT(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const photos = await readGallery();
-    const filtered = photos.filter(p => p.id !== params.id);
+    const filtered = photos.filter(p => p.id !== id);
     if (filtered.length === photos.length) {
       return NextResponse.json({ error: 'Photo not found' }, { status: 404 });
     }

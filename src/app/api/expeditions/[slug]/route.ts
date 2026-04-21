@@ -12,11 +12,12 @@ async function readExpeditions(): Promise<Expedition[]> {
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { slug: string } }
+  { params }: { params: Promise<{ slug: string }> }
 ) {
   try {
+    const { slug } = await params;
     const expeditions = await readExpeditions();
-    const expedition = expeditions.find(e => e.slug === params.slug);
+    const expedition = expeditions.find(e => e.slug === slug);
     if (!expedition) {
       return NextResponse.json({ error: 'Expedition not found' }, { status: 404 });
     }
@@ -28,11 +29,12 @@ export async function GET(
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { slug: string } }
+  { params }: { params: Promise<{ slug: string }> }
 ) {
   try {
+    const { slug } = await params;
     const expeditions = await readExpeditions();
-    const index = expeditions.findIndex(e => e.slug === params.slug);
+    const index = expeditions.findIndex(e => e.slug === slug);
     if (index === -1) {
       return NextResponse.json({ error: 'Expedition not found' }, { status: 404 });
     }
@@ -47,11 +49,12 @@ export async function PUT(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { slug: string } }
+  { params }: { params: Promise<{ slug: string }> }
 ) {
   try {
+    const { slug } = await params;
     const expeditions = await readExpeditions();
-    const filtered = expeditions.filter(e => e.slug !== params.slug);
+    const filtered = expeditions.filter(e => e.slug !== slug);
     if (filtered.length === expeditions.length) {
       return NextResponse.json({ error: 'Expedition not found' }, { status: 404 });
     }
