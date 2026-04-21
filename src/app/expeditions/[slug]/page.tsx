@@ -27,14 +27,16 @@ export async function generateStaticParams() {
   } catch { return []; }
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const exp = await getExpedition(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const exp = await getExpedition(slug);
   if (!exp) return { title: 'Expedition Not Found' };
   return { title: exp.title, description: exp.description };
 }
 
-export default async function ExpeditionDetailPage({ params }: { params: { slug: string } }) {
-  const exp = await getExpedition(params.slug);
+export default async function ExpeditionDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const exp = await getExpedition(slug);
   if (!exp) notFound();
 
   return (
