@@ -288,25 +288,6 @@ export default function AdminTestimonialsPage() {
           </div>
         </div>
       )}
-
-      <style>{`
-        .input-field {
-          width: 100%;
-          padding: 0.5rem 0.75rem;
-          border-radius: 0.75rem;
-          border: 1px solid #e5e7eb;
-          font-family: var(--font-inter), sans-serif;
-          font-size: 0.875rem;
-          color: #292524;
-          background: white;
-          transition: border-color 0.15s, box-shadow 0.15s;
-        }
-        .input-field:focus {
-          outline: none;
-          border-color: #2d5a3f;
-          box-shadow: 0 0 0 3px rgba(45,90,63,0.12);
-        }
-      `}</style>
     </div>
   );
 }
