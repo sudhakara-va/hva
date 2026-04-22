@@ -130,7 +130,7 @@ export default function AdminDashboardPage() {
 
         {/* Quick Links */}
         <h2 className="font-heading text-xl font-bold text-charcoal-dark mb-4">Quick Actions</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
           {quickLinks.map(link => (
             <Link
               key={link.label}

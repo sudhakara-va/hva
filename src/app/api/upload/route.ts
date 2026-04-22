@@ -4,7 +4,7 @@ import path from 'path';
 import { verifySessionToken } from '@/lib/auth';
 
 const UPLOAD_DIR = path.join(process.cwd(), 'public', 'images');
-const ALLOWED_TYPES = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp', 'image/gif'];
+const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
 const MAX_SIZE = 10 * 1024 * 1024; // 10 MB
 
 function requireAuth(request: NextRequest): boolean {
@@ -93,6 +93,11 @@ export async function DELETE(request: NextRequest) {
       return NextResponse.json({ error: 'Invalid filename' }, { status: 400 });
     }
     const filePath = path.join(UPLOAD_DIR, filename);
+    // Ensure resolved path is still within the upload directory
+    const resolved = path.resolve(filePath);
+    if (!resolved.startsWith(path.resolve(UPLOAD_DIR) + path.sep)) {
+      return NextResponse.json({ error: 'Invalid filename' }, { status: 400 });
+    }
     await fs.unlink(filePath);
     return NextResponse.json({ success: true });
   } catch {

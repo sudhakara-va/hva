@@ -63,9 +63,13 @@ export default function AdminImagesPage() {
   };
 
   const handleCopy = async (url: string) => {
-    await navigator.clipboard.writeText(url);
-    setCopiedUrl(url);
-    setTimeout(() => setCopiedUrl(null), 2000);
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopiedUrl(url);
+      setTimeout(() => setCopiedUrl(null), 2000);
+    } catch {
+      /* clipboard access denied — no-op */
+    }
   };
 
   const handleLogout = async () => {
