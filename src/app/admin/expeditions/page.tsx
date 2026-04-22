@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Mountain, LogOut, Plus, Pencil, Trash2, X, ChevronLeft } from 'lucide-react';
 import { Expedition } from '@/lib/types';
+import ImageUpload from '@/components/ui/ImageUpload';
 
 const EMPTY: Partial<Expedition> = {
   title: '', slug: '', tagline: '', description: '', difficulty: 'Moderate',
@@ -348,8 +349,11 @@ export default function AdminExpeditionsPage() {
                 </div>
 
                 <div>
-                  <label className="block font-body text-xs font-semibold text-charcoal-dark mb-1">Cover Image URL</label>
-                  <input name="coverImage" value={form.coverImage ?? ''} onChange={handleChange} className="input-field" placeholder="https://…" />
+                  <ImageUpload
+                    label="Cover Image"
+                    value={form.coverImage ?? ''}
+                    onChange={url => setForm(p => ({ ...p, coverImage: url }))}
+                  />
                 </div>
 
                 <div>

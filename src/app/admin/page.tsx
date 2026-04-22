@@ -2,17 +2,18 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { Mountain, Images, Star, LogOut, TrendingUp, ArrowRight } from 'lucide-react';
+import { Mountain, Images, Star, LogOut, TrendingUp, ArrowRight, FileImage } from 'lucide-react';
 
 interface Stats {
   expeditions: number;
   gallery: number;
   testimonials: number;
+  images: number;
 }
 
 export default function AdminDashboardPage() {
   const router = useRouter();
-  const [stats, setStats] = useState<Stats>({ expeditions: 0, gallery: 0, testimonials: 0 });
+  const [stats, setStats] = useState<Stats>({ expeditions: 0, gallery: 0, testimonials: 0, images: 0 });
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -20,11 +21,13 @@ export default function AdminDashboardPage() {
       fetch('/api/expeditions').then(r => r.json()),
       fetch('/api/gallery').then(r => r.json()),
       fetch('/api/testimonials').then(r => r.json()),
-    ]).then(([exps, gallery, testimonials]) => {
+      fetch('/api/upload').then(r => r.json()),
+    ]).then(([exps, gallery, testimonials, imgs]) => {
       setStats({
         expeditions: Array.isArray(exps) ? exps.length : 0,
         gallery: Array.isArray(gallery) ? gallery.length : 0,
         testimonials: Array.isArray(testimonials) ? testimonials.length : 0,
+        images: Array.isArray(imgs) ? imgs.length : 0,
       });
       setLoading(false);
     }).catch(() => setLoading(false));
@@ -57,12 +60,20 @@ export default function AdminDashboardPage() {
       color: 'bg-orange/10 text-orange-700',
       href: '/admin/testimonials',
     },
+    {
+      label: 'Uploaded Images',
+      value: stats.images,
+      icon: FileImage,
+      color: 'bg-sky-500/10 text-sky-700',
+      href: '/admin/images',
+    },
   ];
 
   const quickLinks = [
     { label: 'Manage Expeditions', desc: 'Add, edit or remove trek listings', href: '/admin/expeditions', icon: Mountain },
     { label: 'Manage Gallery', desc: 'Upload and organise photos', href: '/admin/gallery', icon: Images },
     { label: 'Manage Testimonials', desc: 'Review and curate guest reviews', href: '/admin/testimonials', icon: Star },
+    { label: 'Manage Images', desc: 'Upload and organise your photos', href: '/admin/images', icon: FileImage },
     { label: 'View Public Site', desc: 'Open the website in a new tab', href: '/', icon: TrendingUp },
   ];
 
@@ -95,7 +106,7 @@ export default function AdminDashboardPage() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
           {cards.map(card => (
             <Link key={card.label} href={card.href}>
               <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-gray-200 transition-all cursor-pointer">
@@ -119,7 +130,7 @@ export default function AdminDashboardPage() {
 
         {/* Quick Links */}
         <h2 className="font-heading text-xl font-bold text-charcoal-dark mb-4">Quick Actions</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
           {quickLinks.map(link => (
             <Link
               key={link.label}

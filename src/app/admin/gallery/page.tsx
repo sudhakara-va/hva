@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { Images, LogOut, Plus, Trash2, X, ChevronLeft } from 'lucide-react';
 import Image from 'next/image';
 import { GalleryPhoto } from '@/lib/types';
+import ImageUpload from '@/components/ui/ImageUpload';
 
 const EMPTY: Partial<GalleryPhoto> = {
   title: '', category: 'Trek', expedition: '', url: '', featured: false,
@@ -202,8 +203,13 @@ export default function AdminGalleryPage() {
               {error && <p className="text-red-500 font-body text-sm bg-red-50 rounded-xl px-4 py-3">{error}</p>}
 
               <div>
-                <label className="block font-body text-xs font-semibold text-charcoal-dark mb-1">Image URL *</label>
-                <input name="url" value={form.url ?? ''} onChange={handleChange} required className="input-field" placeholder="https://…" />
+                <ImageUpload
+                  label="Image *"
+                  value={form.url ?? ''}
+                  onChange={url => setForm(p => ({ ...p, url }))}
+                  placeholder="https://… or upload below"
+                  required
+                />
               </div>
 
               <div>

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Star, LogOut, Plus, Pencil, Trash2, X, ChevronLeft } from 'lucide-react';
 import { Testimonial } from '@/lib/types';
+import ImageUpload from '@/components/ui/ImageUpload';
 
 const EMPTY: Partial<Testimonial> = {
   name: '', location: '', trek: '', date: '', rating: 5,
@@ -262,8 +263,12 @@ export default function AdminTestimonialsPage() {
                 </div>
 
                 <div>
-                  <label className="block font-body text-xs font-semibold text-charcoal-dark mb-1">Avatar URL</label>
-                  <input name="photo" value={form.photo ?? ''} onChange={handleChange} className="input-field" placeholder="https://…" />
+                  <ImageUpload
+                    label="Avatar"
+                    value={form.photo ?? ''}
+                    onChange={url => setForm(p => ({ ...p, photo: url }))}
+                    placeholder="https://… or upload an image"
+                  />
                 </div>
 
                 <div className="flex items-center gap-2">
